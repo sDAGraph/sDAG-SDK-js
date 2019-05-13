@@ -1,6 +1,6 @@
 {
   "name": "sdagsign",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,8 @@
   },
   "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme",
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "eccrypto": "^1.1.1"
+  }
 }
