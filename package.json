@@ -1,6 +1,6 @@
 {
   "name": "sdagsign",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +15,6 @@
     "url": "https://github.com/sDAGraph/sDAG-SDK-js/issues"
   },
   "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme",
-  "dependencies": {
-    "user": "0.0.0"
-  },
   "devDependencies": {},
   "description": ""
 }
