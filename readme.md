@@ -16,7 +16,7 @@ let account = new sdag.Accounts.NewAccount(pri)
 ```
 ## Example
 
-- [Generate Address and transaction](https://github.com/sDAGraph/sDAG-SDK-js/docs/account.md)
+- [Generate Address and transaction](https://github.com/sDAGraph/sDAG-SDK-js/blob/master/docs/account.md)
 
 ## Contributing
 
