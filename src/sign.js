@@ -11,7 +11,6 @@ class NewTransaction{
                 this.to = Buffer.from(tx.To, "hex")
                 this.Tx = [this.to,//40
                         Buffer.from(ecdh.getPublicKey('hex').substring(2), "hex"),//128
-                        Buffer.from(this.PrivateKey, "hex"),//64
                         Buffer.from(tx.Balance.padStart(40,"0"), "hex"),//40
                         Buffer.from(tx.Nonce.padStart(10,"0"), "hex"),//10
                         Buffer.from(tx.Gas.padStart(40,"0"), "hex"),//40
@@ -29,12 +28,11 @@ class NewTransaction{
                 this.result = {
                         To              :tx.slice(0, 40)                ,
                         PublicKey       :tx.slice(40, 168)              ,
-                        PrivateKey      :tx.slice(168, 232)             ,
-                        Balance         :tx.slice(232, 272)             ,
-                        Nonce           :tx.slice(272, 282)             ,
-                        Gas             :tx.slice(282, 322)             ,
-                        Type            :tx.slice(322, 332)             ,
-                        Input           :tx.slice(332, tx.length+10)    ,
+                        Balance         :tx.slice(168, 208)             ,
+                        Nonce           :tx.slice(208, 218)             ,
+                        Gas             :tx.slice(218, 258)             ,
+                        Type            :tx.slice(258, 268)             ,
+                        Input           :tx.slice(268, tx.length+10)    ,
                 }
                 return this.result
         }
