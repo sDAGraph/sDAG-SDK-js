@@ -26,13 +26,9 @@ function TransactionTest(){
 	let transaction = new sdag.Signs.NewTransaction(pri,tx)
 	let result = transaction.EncodeHex
 	console.log("encode:",result)
-	transaction.GetSignRawHex().then(function(sig){
-		let sigtx = sig.signature.toString("hex")
-		console.log("sign result:", sigtx)
-		console.log(sigtx+result)
-		console.log(transaction.Decode(sigtx+result))
-	})
+	console.log(transaction.GetSignRawHex().signature.toString("hex"))
 }
+
 
 let account = new sdag.Accounts.NewAccountEddsa("123")
 console.log("key:", account.GeneratePrivateKey())

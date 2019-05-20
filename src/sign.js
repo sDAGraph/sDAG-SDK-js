@@ -1,5 +1,4 @@
 const crypto = require("crypto")
-const eccrypto = require("eccrypto")
 const { createECDH, ECDH , createHmac } = require('crypto');
 const ecdh = createECDH('secp256k1');
 const secp256k1 = require('secp256k1')
