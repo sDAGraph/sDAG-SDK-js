@@ -2,7 +2,8 @@ const crypto = require("crypto")
 const eccrypto = require("eccrypto")
 const { createECDH, ECDH , createHmac } = require('crypto');
 const ecdh = createECDH('secp256k1');
-
+const secp256k1 = require('secp256k1')
+const createKeccakHash = require('keccak')
 
 class NewTransaction{
         constructor(key, tx){
@@ -38,7 +39,10 @@ class NewTransaction{
         }
 	GetSignRawHex(){
 		let msgs = crypto.createHash("sha256").update(this.EncodeHex).digest();
-		return eccrypto.sign(Buffer.from(this.PrivateKey,"hex"), msgs)
+		console.log(this.EncodeHex)
+		console.log("tag:", msgs.toString("hex"))
+		return  secp256k1.sign(msgs, Buffer.from(this.PrivateKey,"hex"))
+		//return sig
 	}
 }
 

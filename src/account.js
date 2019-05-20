@@ -19,7 +19,7 @@ class NewAccount {
 		return sha256(this.PublicKey).substr(24,64)
 	}
 	get PublicKey(){
-		return ecdh.getPublicKey('hex').substring(2);
+		return ecdh.getPublicKey('hex')/*.substring(2)*/;
 	}
 }
 

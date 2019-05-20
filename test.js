@@ -1,5 +1,5 @@
 const sdag = require("./index.js")
-const pri = "e15529012fefc81277af5a46980266edf41d192bee34159dc432f0190dc6e5c1"
+const pri = "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
 
 AccountTest()
 TransactionTest()
@@ -10,24 +10,31 @@ function AccountTest(){
 	console.log(account.Address)
 	console.log("address check:", account.Address==="a3d5b73a8e19e763df8ed9eb3e97c78958d440fb")
 	console.log("publkey check:", account.PublicKey==="f70d5628a90211000e44d73370fb3ace0579131cfc9c7d1e5c5a66901c7afe4e81516680ef378aab795e9ffd06b4583930aeda10555f5816e4de118ce074907b")
+	console.log("pubkey print:",account.PublicKey)
 }
 
 function TransactionTest(){
 	tx = {
-		To : "a3d5b73a8e19e763df8ed9eb3e97c78958d440fb",
+		To : "5834388a0f62d75bd059300fa02c1a938a301007",
 		PrivateKey : pri,
 		Balance : "1",
-		Nonce : "1",
-		Gas : "1",
-		Type : "aaa",
-		Input : "daa11234"
+		Nonce : "210",
+		Gas : "10",
+		Type : "a64",
+		Input : "ccaacc"
 	}
 	let transaction = new sdag.Signs.NewTransaction(pri,tx)
 	let result = transaction.EncodeHex
+	console.log("encode:",result)
 	transaction.GetSignRawHex().then(function(sig){
-		console.log(sig.toString("hex")+result)
-		console.log(transaction.Decode(sig.toString("hex")+result))
+		let sigtx = sig.signature.toString("hex")
+		console.log("sign result:", sigtx)
+		console.log(sigtx+result)
+		console.log(transaction.Decode(sigtx+result))
 	})
-
 }
 
+let account = new sdag.Accounts.NewAccountEddsa("123")
+console.log("key:", account.GeneratePrivateKey())
+console.log("Public:",account.PublicKey)
+console.log("Address",account.Address)
