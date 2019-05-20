@@ -10,13 +10,14 @@ class NewTransaction{
                 this.ecdhkey = ecdh.setPrivateKey(key,"hex")
                 this.to = Buffer.from(tx.To, "hex")
                 this.Tx = [
-			Buffer.from("a64".padStart(10,"0"), "hex"),
+			//Buffer.from("a64".padStart(10,"0"), "hex"),
 			this.to,//40
                         Buffer.from(ecdh.getPublicKey('hex'), "hex"),//128
                         Buffer.from(tx.Balance.padStart(40,"0"), "hex"),//40
                         Buffer.from(tx.Nonce.padStart(10,"0"), "hex"),//10
                         Buffer.from(tx.Gas.padStart(40,"0"), "hex"),//40
                         Buffer.from(tx.Type.padStart(10,"0"), "hex"),//10
+			Buffer.from("a64".padStart(10,"0"), "hex"),
                         Buffer.from(tx.Input, "hex")//un
                 ]
         }
