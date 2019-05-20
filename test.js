@@ -26,7 +26,7 @@ function TransactionTest(){
 	let transaction = new sdag.Signs.NewTransaction(pri,tx)
 	let result = transaction.EncodeHex
 	console.log("encode:",result)
-	console.log(transaction.GetSignRawHex().signature.toString("hex"))
+	console.log(transaction.GetSignRawHex())
 }
 
 

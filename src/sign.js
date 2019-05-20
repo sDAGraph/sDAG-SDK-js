@@ -10,7 +10,6 @@ class NewTransaction{
                 this.ecdhkey = ecdh.setPrivateKey(key,"hex")
                 this.to = Buffer.from(tx.To, "hex")
                 this.Tx = [
-			//Buffer.from("a64".padStart(10,"0"), "hex"),
 			this.to,//40
                         Buffer.from(ecdh.getPublicKey('hex'), "hex"),//128
                         Buffer.from(tx.Balance.padStart(40,"0"), "hex"),//40
@@ -41,10 +40,7 @@ class NewTransaction{
         }
 	GetSignRawHex(){
 		let msgs = crypto.createHash("sha256").update(this.EncodeHex).digest();
-		console.log(this.EncodeHex)
-		console.log("tag:", msgs.toString("hex"))
-		return  secp256k1.sign(msgs, Buffer.from(this.PrivateKey,"hex"))
-		//return sig
+		return  secp256k1.sign(msgs, Buffer.from(this.PrivateKey,"hex"))["signature"].toString("hex")
 	}
 }
 
