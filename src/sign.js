@@ -32,10 +32,11 @@ class NewTransaction{
                         publicKey       :tx.slice(40, 170)              ,
                         balance         :tx.slice(170, 210)             ,
                         nonce           :parseInt(tx.slice(210, 220),10),
-                        fee             :parseInt(tx.slice(220, 260),10),
+                        fee             :tx.slice(220, 260),
 			gas             :tx.slice(220, 260)             ,
                         type            :parseInt(tx.slice(260, 270),16).toString(16),
-                        input           :parseInt(tx.slice(270, tx.length+10),16).toString(16)    ,
+                        crypto          :parseInt(tx.slice(270, 280),16).toString(16),
+                        input           :parseInt(tx.slice(280, tx.length+10),16).toString(16)    ,
 			sign		:this.GetSignRawHex()
                 }
                 return this.result
