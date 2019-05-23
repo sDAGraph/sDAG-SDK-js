@@ -28,19 +28,34 @@ class NewTransaction{
 			tx = tx.substring(142)
 		}
                 this.result = {
-                        To              :tx.slice(0, 40)                ,
-                        PublicKey       :tx.slice(40, 168)              ,
-                        Balance         :tx.slice(168, 208)             ,
-                        Nonce           :tx.slice(208, 218)             ,
-                        Gas             :tx.slice(218, 258)             ,
-                        Type            :tx.slice(258, 268)             ,
-                        Input           :tx.slice(268, tx.length+10)    ,
+                        to              :tx.slice(0, 40)                ,
+                        publicKey       :tx.slice(40, 170)              ,
+                        balance         :tx.slice(170, 210)             ,
+                        nonce           :parseInt(tx.slice(210, 220),10),
+                        fee             :parseInt(tx.slice(220, 260),10),
+			gas             :tx.slice(220, 260)             ,
+                        type            :parseInt(tx.slice(260, 270),16).toString(16),
+                        input           :parseInt(tx.slice(270, tx.length+10),16).toString(16)    ,
+			sign		:this.GetSignRawHex()
                 }
                 return this.result
         }
 	GetSignRawHex(){
 		let msgs = crypto.createHash("sha256").update(this.EncodeHex).digest();
 		return  secp256k1.sign(msgs, Buffer.from(this.PrivateKey,"hex"))["signature"].toString("hex")
+	}
+	GetTx(){
+		return this.Decode(this.EncodeHex)
+	}
+	GetSignRawHexFull(){
+		let method = "signTransaction"
+		let result = this.GetTx()
+		return {
+			"method":method,
+			"result":result,
+			"message":"",
+			"txid":"",
+		}
 	}
 }
 

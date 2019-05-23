@@ -1,6 +1,6 @@
 {
   "name": "sdagsign",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
