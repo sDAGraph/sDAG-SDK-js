@@ -3,7 +3,7 @@
 
 ## Installation
 ``` bash
-npm i sdagsign
+npm i sdagraph
 ```
 ## Usage and Example
 
