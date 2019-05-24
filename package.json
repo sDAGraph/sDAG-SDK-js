@@ -1,7 +1,11 @@
 {
-  "name": "sdagsign",
-  "version": "0.0.9",
+  "name": "sdagraph",
+  "version": "0.0.2",
+  "description": "sDAG-SDK-js - sDAGraph JavaScript API",
   "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
     "test": "node test.js"
   },
@@ -9,14 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/sDAGraph/sDAG-SDK-js.git"
   },
+  "keywords": [
+    "sDAGraph",
+    "blockchain",
+    "javascrpit"
+  ],
   "author": "Xien",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sDAGraph/sDAG-SDK-js/issues"
   },
-  "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme",
-  "devDependencies": {},
-  "description": "",
-  "dependencies": {
-  }
+  "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme"
 }
