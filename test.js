@@ -42,5 +42,9 @@ chain.getBlockByHash("cfb800e969b3900d3a00489a1cc5f25755846b06086e39bf63ef0514ec
 )
 
 chain.getBlockByNumber("1").then(
-        result =>{console.log("num:",result)}
+        result =>{console.log("num:",result.blockNumber)}
+)
+
+chain.getAccount("e658e4a47103b4578fd2ba6aa52af1b9fc67c129").then(
+        result =>{console.log("account:",result.balance)}
 )
