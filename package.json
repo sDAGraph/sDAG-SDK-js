@@ -1,27 +1,59 @@
 {
-  "name": "sdagraph",
-  "version": "0.0.1",
+  "_from": "sdagraph",
+  "_id": "sdagraph@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-0Q0gce/+W8eHpmz5cNrCf49N8txy8cguaTsuLgBBGGwwQglOQu1zLmaBIPE8vD+zYcNCBM8vNQ+4WF/RJuVzcA==",
+  "_location": "/sdagraph",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "sdagraph",
+    "name": "sdagraph",
+    "escapedName": "sdagraph",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sdagraph/-/sdagraph-0.0.2.tgz",
+  "_shasum": "138cd0d90c906b3bbce225bccc930387f291aba6",
+  "_spec": "sdagraph",
+  "_where": "/home/isaachuang/sign",
+  "author": {
+    "name": "Xien"
+  },
+  "bugs": {
+    "url": "https://github.com/sDAGraph/sDAG-SDK-js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "sDAG-SDK-js - sDAGraph JavaScript API",
-  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
-  "scripts": {
-    "test": "node test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sDAGraph/sDAG-SDK-js.git"
-  },
+  "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme",
   "keywords": [
     "sDAGraph",
     "blockchain",
     "javascrpit"
   ],
-  "author": "Xien",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sDAGraph/sDAG-SDK-js/issues"
+  "main": "index.js",
+  "name": "sdagraph",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sDAGraph/sDAG-SDK-js.git"
   },
-  "homepage": "https://github.com/sDAGraph/sDAG-SDK-js#readme"
+  "scripts": {
+    "test": "node test.js"
+  },
+  "version": "0.0.2",
+  "dependencies": {
+    "keccak": "^2.0.0",
+    "sha256": "^0.2.0"
+  }
 }

@@ -31,8 +31,20 @@ function TransactionTest(){
 	console.log("test GetSignRawHexFull", transaction.GetSignRawHexFull())
 }
 
+let chain = new sdag.Chains("http://192.168.51.212:9999")
 
-let account = new sdag.Accounts.NewAccountEddsa("123")
-console.log("key:", account.GeneratePrivateKey())
-console.log("Public:",account.PublicKey)
-console.log("Address",account.Address)
+chain.getTransaction("e7a9479dc5786f21a777377ea92ce29182eb86e9c23154b95562ea02db22e854").then(
+	result =>{console.log(result.tx)}
+)
+
+chain.getBlockByHash("cfb800e969b3900d3a00489a1cc5f25755846b06086e39bf63ef0514ece901b1").then(
+        result =>{console.log(result.blockNumber)}
+)
+
+chain.getBlockByNumber("1").then(
+        result =>{console.log("num:",result.blockNumber)}
+)
+
+chain.getAccount("e658e4a47103b4578fd2ba6aa52af1b9fc67c129").then(
+        result =>{console.log("account:",result.balance)}
+)

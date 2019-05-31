@@ -1,4 +1,5 @@
 "use strict"
 const Accounts = require("./src/account");
 const Signs = require("./src/sign")
-module.exports = {Accounts, Signs};
+const Chains = require("./src/chain").NewChain
+module.exports = {Accounts, Signs, Chains};
