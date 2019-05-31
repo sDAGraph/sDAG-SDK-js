@@ -21,7 +21,7 @@ function TransactionTest(){
 		Nonce : "210",
 		Gas : "10",
 		Type : "a64",
-		Input : "ccaacc"
+		Input : "ccaacc11111111111111111111111111111111111111111111111aa1"
 	}
 	let transaction = new sdag.Signs.NewTransaction(pri,tx)
 	let result = transaction.EncodeHex
