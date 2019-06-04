@@ -23,10 +23,10 @@ class NewTransaction{
         get EncodeHex(){
                 return Buffer.concat(this.Tx).toString('hex');
         }
+	get EncodeHexLV(){
+		
+	}
         Decode(tx){
-		//if(tx.length>400){
-		//	tx = tx.substring(142)
-		//}
                 this.result = {
                         to              :tx.slice(0, 40)                ,
                         publicKey       :tx.slice(40, 170)              ,

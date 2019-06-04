@@ -51,7 +51,7 @@
   "scripts": {
     "test": "node test.js"
   },
-  "version": "0.0.2",
+  "version": "0.0.5",
   "dependencies": {
     "keccak": "^2.0.0",
     "sha256": "^0.2.0"
