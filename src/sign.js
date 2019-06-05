@@ -19,6 +19,7 @@ class NewTransaction{
 			Buffer.from("a64".padStart(10,"0"), "hex"),
                         Buffer.from(tx.Input, "hex")//un
                 ]
+		this.ETx = tx.To+ecdh.getPublicKey('hex')+tx.Balance.padStart(40,"0")+tx.Nonce.padStart(10,"0")+tx.Gas.padStart(40,"0")+tx.Type.padStart(10,"0")+"a64".padStart(10,"0")+tx.Input
         }
         get EncodeHex(){
                 return Buffer.concat(this.Tx).toString('hex');
@@ -42,11 +43,11 @@ class NewTransaction{
                 return this.result
         }
 	GetSignRawHex(){
-		let msgs = crypto.createHash("sha256").update(this.EncodeHex).digest();
+		let msgs = crypto.createHash("sha256").update(this.ETx).digest();
 		return  secp256k1.sign(msgs, Buffer.from(this.PrivateKey,"hex"))["signature"].toString("hex")
 	}
 	GetTx(){
-		return this.Decode(this.EncodeHex)
+		return this.Decode(this.ETx)
 	}
 	GetSignRawHexFull(){
 		let method = "signTransaction"

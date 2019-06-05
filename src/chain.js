@@ -25,6 +25,7 @@ class NewChain{
                 let link = this.ip+method+"?address="+address
                 return PromiseFrame(link)
         }
+	
 }
 
 function PromiseFrame(link){
