@@ -24,9 +24,9 @@ class NewTransaction{
                 return Buffer.concat(this.Tx).toString('hex');
         }
         Decode(tx){
-		if(tx.length>400){
-			tx = tx.substring(142)
-		}
+		//if(tx.length>400){
+		//	tx = tx.substring(142)
+		//}
                 this.result = {
                         to              :tx.slice(0, 40)                ,
                         publicKey       :tx.slice(40, 170)              ,
@@ -36,7 +36,7 @@ class NewTransaction{
 			gas             :tx.slice(220, 260)             ,
                         type            :parseInt(tx.slice(260, 270),16).toString(16),
                         crypto          :parseInt(tx.slice(270, 280),16).toString(16),
-                        input           :parseInt(tx.slice(280, tx.length+10),16).toString(16)    ,
+                        input           :tx.slice(280, tx.length)    ,
 			sign		:this.GetSignRawHex()
                 }
                 return this.result
