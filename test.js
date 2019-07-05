@@ -30,6 +30,12 @@ function TransactionTest(){
 	console.log("test GetTx",transaction.GetTx())
 	console.log("test GetEtx",transaction.ETx)
 	console.log("test GetSignRawHexFull", transaction.GetSignRawHexFull())
+	let chain = new sdag.Chains("http://192.168.51.212:9999");
+        chain.Broadcast(transaction.GetSignRawHexFull().result).then(
+                result => {
+                        console.log("Broadcast:"+result);
+                }
+        )
 }
 
 let chain = new sdag.Chains("http://192.168.51.212:9999")
