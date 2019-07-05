@@ -17,7 +17,7 @@ class NewAccount {
 		return createHmac('sha256', secret).update(secret).digest('hex');
 	}
 	get Address(){
-		return sha256(this.PublicKey).substr(24,64)
+		return sha256(this.PublicKey.substr(2)).substr(24,64)
 	}
 	get PublicKey(){
 		return ecdh.getPublicKey('hex')/*.substring(2)*/;
