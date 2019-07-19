@@ -23,4 +23,12 @@ let transaction = new sdag.Signs.NewTransaction(pri,tx)
 transaction.GetSignRawHexFull()
 //
 ```
-
+## Broadcast
+```
+let chain = new sdag.Chains("http://192.168.51.212:9999");
+chain.Broadcast(transaction.GetSignRawHexFull().result).then(
+	result => {
+		console.log("Broadcast:"+result);
+		}
+);
+```
