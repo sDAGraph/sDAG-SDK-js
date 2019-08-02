@@ -7,7 +7,7 @@ npm i sdagraph
 ```
 ## Usage and Example
 
-- [Generate Account](https://github.com/sDAGraph/sDAG-SDK-js/blob/master/docs/account.md)i
+- [Generate Account](https://github.com/sDAGraph/sDAG-SDK-js/blob/master/docs/account.md)
 
 - [Generate Transaction](https://github.com/sDAGraph/sDAG-SDK-js/blob/master/docs/transaction.md)
 
